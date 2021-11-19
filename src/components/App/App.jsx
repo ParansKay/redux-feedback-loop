@@ -1,6 +1,8 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import '../App/App.css'
+import Feeling from '../Feeling/Feeling';
 
 function App() {
 
@@ -10,6 +12,7 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+      <Feeling/>
     </div>
   );
 }
