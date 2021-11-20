@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import '../App/App.css'
 import Feeling from '../Feeling/Feeling';
 
-function App() {
+function App(props) {
+  
+    // const dispatch = useDispatch(); //this code allows us to call the redux listener
+
 
   return (
     <div className='App'>

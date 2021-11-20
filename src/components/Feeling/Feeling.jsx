@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useState, useEffect } from 'react';
+import * as React from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,16 +8,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@material-ui/core/Grid';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
 
+function FeelingSelector() {
 
-function Feeling() {
+    // const reducerName = useSelector(store => store.reducerName);
+    // const feeling = useSelector(store => store.feeling);
+    // console.log('feeling -------->', feeling);
+    // const dispatch = useDispatch();
+    const [newFeeling, setNewFeeling] = useState(0);
+    
   
-  // const reducerName = useSelector(store => store.reducerName);
-//   const dispatch = useDispatch(); //for some reason unhappy about this line? 
+    const addFeeling = (event) => {
+      setNewFeeling(event.target.value);
+      console.log( 'feeling is at:', newFeeling );
+    };
+
 
   return (
     <div>
-        <div className="CardStuff">
+        <div>
         <Grid
             container
             alignItems="center"
@@ -24,24 +39,52 @@ function Feeling() {
             style={{ width: '100%', height: 'auto'}}
             >
 
-            <Grid item xs={8}>
+            <Grid item xs={7}>
             {/* the number inside {} indicates how wide the card can be. Weird. */}
                 <Card className="card" variant="outlined">
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            <h2>How are you FEELING today?</h2>
+                            <h2>How are you feeling today?</h2>
                         </Typography>
-                    </CardContent>
-                    <CardActions sx={{ justifyContent: "center" }}> 
+
+                        <FormControl className="formClass" sx={{ m: 1, minWidth: 120 }}>
+                            <InputLabel id="feeling-select-label">Today I am feeling...</InputLabel>
+                                <Select
+                                    labelId="feeling-select-label"
+                                    // this ID needs to be the same as the ID of InputLabel ^^
+                                    id="feeling-select"
+                                    // but this id needs to be different from the other two above ^^
+                                    value={newFeeling}
+                                    label="Feelings"
+                                    onChange={( event )=>addFeeling( event )}
+                                >
+                                    <MenuItem value="">
+                                        <em>Today I am feeling...</em>
+                                        {/* this is an empty value. when a user clicks on this, the selector box will go back to displaying the label */}
+                                    </MenuItem>
+                                    <MenuItem value={1}>1</MenuItem>
+                                    <MenuItem value={2}>2</MenuItem>
+                                    <MenuItem value={3}>3</MenuItem>
+                                    <MenuItem value={4}>4</MenuItem>
+                                    <MenuItem value={5}>5</MenuItem>
+                                </Select>
+                                <FormHelperText>Rate your feelings! 5 is highest and 1 is the lowest.</FormHelperText>
+                                {/* this places a "helper text" for the user under the select box */}
+                        </FormControl>
+                    </CardContent>    
+                    <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
-                        <Button className="pizzItemButton" variant="contained" color="secondary" size="small">Next</Button>
+                        <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={()=>dispatch({type: 'ADD_FEELING', payload:{ feeling: newFeeling} })}>Next</Button>
                     </CardActions>
                 </Card>
             </Grid>      
             </Grid>
         </div>
+        <div>
+            <h2>JSON.stringify {newFeeling}</h2>
+        </div>
     </div>
   )
-}
+  }
 
-export default Feeling;
+export default FeelingSelector;
