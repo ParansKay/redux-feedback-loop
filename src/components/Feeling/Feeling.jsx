@@ -17,17 +17,23 @@ import FormHelperText from '@mui/material/FormHelperText';
 function FeelingSelector() {
 
     // const reducerName = useSelector(store => store.reducerName);
-    // const feeling = useSelector(store => store.feeling);
-    // console.log('feeling -------->', feeling);
-    // const dispatch = useDispatch();
+
+    const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
+    console.log('collectResponse -------->', collectResponses);
+    const dispatch = useDispatch();
+
     const [newFeeling, setNewFeeling] = useState(0);
     
-  
     const addFeeling = (event) => {
       setNewFeeling(event.target.value);
       console.log( 'feeling is at:', newFeeling );
     };
-
+    
+    const buttonClick = ()=>{
+        console.log( 'in buttonClick' );
+        dispatch({type: 'ADD_FEELING',
+        payload: newFeeling }) //everything inside the ( ) is an action
+    }
 
   return (
     <div>
@@ -44,7 +50,7 @@ function FeelingSelector() {
                 <Card className="card" variant="outlined">
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            <h2>How are you feeling today?</h2>
+                            <h3>How are you feeling today?</h3>
                         </Typography>
 
                         <FormControl className="formClass" sx={{ m: 1, minWidth: 120 }}>
@@ -74,7 +80,7 @@ function FeelingSelector() {
                     </CardContent>    
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
-                        <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={()=>dispatch({type: 'ADD_FEELING', payload:{ feeling: newFeeling} })}>Next</Button>
+                        <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
                     </CardActions>
                 </Card>
             </Grid>      

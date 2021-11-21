@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import '../App/App.css'
 import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding'
+import Support from '../Support/Support'
 
 function App(props) {
   
@@ -16,6 +18,8 @@ function App(props) {
         <h4>Don't forget it!</h4>
       </header>
       <Feeling/>
+      <Understanding/>
+      <Support/>
     </div>
   );
 }
