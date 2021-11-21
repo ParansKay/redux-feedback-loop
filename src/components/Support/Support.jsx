@@ -17,7 +17,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 function SupportSelector() {
 
     // const reducerName = useSelector(store => store.reducerName);
-
+    //the next three line of code are the same for EVERY component. This is a one way road to the store 
     const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
     console.log('collectResponse -------->', collectResponses);
     const dispatch = useDispatch();
@@ -32,7 +32,7 @@ function SupportSelector() {
     const buttonClick = ()=>{
         console.log( 'in buttonClick' );
         dispatch({type: 'ADD_SUPPORT',
-        payload: newSupport }) //everything inside the ( ) is an action
+        payload: newSupport }) //everything inside the ( ) is an action that the dispatch call takes to the store
     }
 
   return (
