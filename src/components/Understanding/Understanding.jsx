@@ -1,6 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useState, useEffect } from 'react';
 import * as React from 'react';
+import { Link } from 'react-router-dom'; //must define link within each component, otherwise we get an undefined error
+// Material UI imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -62,6 +64,7 @@ function UnderstandingSelector() {
                                     // but this id needs to be different from the other two above ^^
                                     value={newUnderstanding}
                                     label="Understanding"
+                                    //when the user selects a value, run addUnderstanding (defined aboved)
                                     onChange={( event )=>addUnderstanding( event )}
                                 >
                                     <MenuItem value="">
@@ -80,7 +83,10 @@ function UnderstandingSelector() {
                     </CardContent>    
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
-                        <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                     {/* button needs to be wrapped inside of link, otherwise it won't work */}
+                        <Link to="/support">
+                            <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                        </Link>
                     </CardActions>
                 </Card>
             </Grid>      

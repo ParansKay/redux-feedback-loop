@@ -1,6 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useState, useEffect } from 'react';
 import * as React from 'react';
+import { Link } from 'react-router-dom'; //must define link within each component, otherwise we get an undefined error
+// Material UI imports 
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -80,7 +82,10 @@ function FeelingSelector() {
                     </CardContent>    
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
+                    {/* button needs to be wrapped inside of link, otherwise it won't work */}
+                    <Link to="/understanding">
                         <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                    </Link>
                     </CardActions>
                 </Card>
             </Grid>      

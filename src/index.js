@@ -10,8 +10,7 @@ import logger from 'redux-logger'; //this essentially acts as a console log
 import axios from 'axios';
 import registerServiceWorker from './registerServiceWorker';
 
-// reducers
-// defined here! Below. THIS IS THE ORIGIN
+// reducers are defined below. THIS IS THE ORIGIN of the "collectResponses" reducer. All other components will look to this function to run their actions. 
 // "state" does not have to be "state" it could be "taco"
 const collectResponses = ( state={
     //this way we can pass multiple values once via an object
