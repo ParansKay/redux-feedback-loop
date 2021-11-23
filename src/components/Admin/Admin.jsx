@@ -19,26 +19,15 @@ function Review(props) {
     const dispatch = useDispatch();
     const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
     
-    // const handleGet=()=>{
-    // axios.get('/feedback').then( ( response )=>{
-    //     console.log( response )
-    //     setFeedbackList( response.data );
-    // }).catch( ( error )=>{
-    // })
-    // }
-    //END handleGet
+    const handleGet=()=>{
+    axios.get('/feedback').then( ( response )=>{
+        console.log( response )
+        setFeedbackList( response.data );
+    }).catch( ( error )=>{
+    })
+    }
+    // END handleGet
 
-    // POST ROUTE 
-    const handlePost = () =>{
-        console.log( 'in handlePost' );
-        axios.post( `/feedback`, collectResponses ).then( (response)=>{
-            //send a dispatch to empty out the store
-            dispatch({ type: 'EMPTY_REDUCER' });
-          }).catch((err)=>{
-             alert('POST Failed');
-             console.log(err);
-          });
-    } //END handlePost
 
 return(
   <div>

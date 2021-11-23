@@ -40,6 +40,10 @@ const collectResponses = ( state={
         // set state to everything state is, except understanding. Where you find support(in our state object), replace the property value with action.payload
         state={...state, Comments: action.payload}
     }
+    // we need to empty out our reducer once the data is posted 
+    else if( action.type === 'EMPTY_REDUCER' ){
+        state={}
+    }
 
     console.log( 'in collectResponses!', action.type, action.payload );
     
@@ -51,7 +55,7 @@ const collectResponses = ( state={
 const storeInstance = createStore(
     combineReducers(
       // this still needs to reference a variable (defined up above^^)
-       {collectResponses} //Feeling component reducer looks to this line for reference. This line looks to line 15 (const collectResponses)
+       {collectResponses} //component reducers looks to this line for reference. This line looks to line 15 (const collectResponses)
       
     ),
     applyMiddleware(
