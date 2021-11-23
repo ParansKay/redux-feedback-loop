@@ -23,8 +23,8 @@ function FeelingSelector() {
     const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
     console.log('collectResponse -------->', collectResponses);
     const dispatch = useDispatch();
-
-    const [newFeeling, setNewFeeling] = useState(0);
+    // previously, I used useState(0). That sets the input selector to 0 everytime we go back a page, so I modified it to set it's value to the properties of our reducer :) 
+    const [newFeeling, setNewFeeling] = useState(collectResponses.Feeling);
     
     const addFeeling = (event) => {
       setNewFeeling(event.target.value);
@@ -83,9 +83,14 @@ function FeelingSelector() {
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
                     {/* button needs to be wrapped inside of link, otherwise it won't work */}
-                    <Link to="/understanding">
-                        <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
-                    </Link>
+                    <div className="NextPageButton">
+                    {newFeeling>0?
+                        <Link to="/understanding">
+                            <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                        </Link>:
+                            <Button size="large" onClick={buttonClick} variant="contained" fontSize="large" disabled>Next</Button>
+                    }
+                    </div>
                     </CardActions>
                 </Card>
             </Grid>      

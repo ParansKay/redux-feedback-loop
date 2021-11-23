@@ -25,7 +25,8 @@ function CommentInput() {
     console.log('collectResponse -------->', collectResponses);
     const dispatch = useDispatch();
 
-    const [newComment, setNewComment] = useState('');
+     // previously, I used useState(''). That sets the input selector to 0 everytime we go back a page, so I modified it to set it's value to the properties of our reducer :) 
+    const [newComment, setNewComment] = useState(collectResponses.Comments);
     
     const addComment = (event) => {
         setNewComment(event.target.value);
@@ -36,6 +37,11 @@ function CommentInput() {
         console.log( 'in buttonClick' );
         dispatch({type: 'ADD_COMMENT',
         payload: newComment }) //everything inside the ( ) is an action that the dispatch call takes to the store
+    }
+
+     //creating a function that console logs when we have returned to the previous page
+     const goBack = ()=>{
+        console.log( 'In goBack—going back to previous page!' )
     }
 
   return (
@@ -63,15 +69,20 @@ function CommentInput() {
                             multiline
                             //lets figure out how to make this box larger!!!!!!!!!!!
                             rows={4}
-                            defaultValue=""
+                            defaultValue={collectResponses.Comments}
                             onChange={ ( event )=>addComment( event )}
                             />
                     </CardContent>    
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
-                        <Link to="/review">
-                            <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
-                        </Link>
+                        <div className="NextPageButton">
+                            <Link to="/support">
+                                <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                            </Link>
+                            <Link to="/review">
+                                <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                            </Link>
+                        </div>
                     </CardActions>
                 </Card>
             </Grid>      

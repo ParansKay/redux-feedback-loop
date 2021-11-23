@@ -19,6 +19,11 @@ function Review(props) {
     const dispatch = useDispatch();
     const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
     
+      //creating a function that console logs when we have returned to the previous page
+      const goBack = ()=>{
+        console.log( 'In goBack—going back to previous page!' )
+    }
+
     // const handleGet=()=>{
     // axios.get('/feedback').then( ( response )=>{
     //     console.log( response )
@@ -68,9 +73,12 @@ return(
                 <CardActions sx={{ justifyContent: "right" }}> 
                 {/* ^^ centers the button, but not the card itself */}
                 {/* button needs to be wrapped inside of link, otherwise it won't work */}
-                <Link to="/thankyou">
-                    <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={handlePost}>Submit</Button>
-                </Link>
+                    <Link to="/comments">
+                        <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                    </Link>
+                    <Link to="/thankyou">
+                        <Button className="submitbtn" variant="contained" color="primary" size="large" onClick={handlePost}>Submit</Button>
+                    </Link>
                 </CardActions>
             </Card>
         </Grid>      

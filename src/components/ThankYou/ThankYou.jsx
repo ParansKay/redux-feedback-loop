@@ -39,7 +39,7 @@ return(
                 {/* ^^ centers the button, but not the card itself */}
                 {/* button needs to be wrapped inside of link, otherwise it won't work */}
                 <Link to="/">
-                    <Button className="pizzItemButton" variant="contained" color="primary" size="large">Submit another feedback</Button>
+                    <Button className="redoFeedback" variant="contained" color="primary" size="large">Submit another feedback</Button>
                 </Link>
                 </CardActions>
             </Card>

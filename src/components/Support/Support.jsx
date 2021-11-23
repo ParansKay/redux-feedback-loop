@@ -23,8 +23,8 @@ function SupportSelector() {
     const collectResponses = useSelector(store => store.collectResponses); //looking at index.js for the value of collectResponses
     console.log('collectResponse -------->', collectResponses);
     const dispatch = useDispatch();
-
-    const [newSupport, setNewSupport] = useState(0);
+    // previously, I used useState(0). That sets the input selector to 0 everytime we go back a page, so I modified it to set it's value to the properties of our reducer :) 
+    const [newSupport, setNewSupport] = useState(collectResponses.Support);
     
     const addSupport = (event) => {
         setNewSupport(event.target.value);
@@ -35,6 +35,11 @@ function SupportSelector() {
         console.log( 'in buttonClick' );
         dispatch({type: 'ADD_SUPPORT',
         payload: newSupport }) //everything inside the ( ) is an action that the dispatch call takes to the store
+    }
+
+    //creating a function that console logs when we have returned to the previous page
+    const goBack = ()=>{
+        console.log( 'In goBack—going back to previous page!' )
     }
 
   return (
@@ -83,9 +88,17 @@ function SupportSelector() {
                     <CardActions sx={{ justifyContent: "right" }}> 
                     {/* ^^ centers the button, but not the card itself */}
                     {/* button needs to be wrapped inside of link, otherwise it won't work */}
-                        <Link to="/comments">
-                            <Button className="pizzItemButton" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
-                        </Link>
+                        <div className="NextPageButton">
+                            <Link to="/understanding">
+                                <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                            </Link>
+                            {newSupport>0?
+                                <Link to="/comments">
+                                    <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                                </Link>:
+                                <Button size="large" onClick={buttonClick} variant="contained" fontSize="large" disabled>Next</Button>
+                            }
+                        </div>
                     </CardActions>
                 </Card>
             </Grid>      

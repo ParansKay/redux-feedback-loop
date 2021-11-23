@@ -8,7 +8,6 @@ import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
-import Admin from '../Admin/Admin';
 import { BrowserRouter, Link } from 'react-router-dom'; 
 import { Routes, Route } from 'react-router';
 
@@ -32,7 +31,6 @@ function App(props) {
            <Route path="/comments" element={ <Comments/> } ></Route>
            <Route path="/review" element={ <Review/> } ></Route>
            <Route path="/thankyou" element={ <ThankYou/> } ></Route>
-           <Route path="/admin" element={ <Admin/> } ></Route>
         </Routes>
         </BrowserRouter>
 </div>
