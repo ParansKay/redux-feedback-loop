@@ -90,13 +90,13 @@ function SupportSelector() {
                     {/* button needs to be wrapped inside of link, otherwise it won't work */}
                         <div className="NextPageButton">
                             <Link to="/understanding">
-                                <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                                <Button size="large" onClick={goBack} variant="outlined" color="secondary" fontSize="large">go back</Button>
                             </Link>
                             {newSupport>0?
                                 <Link to="/comments">
-                                    <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                                    <Button className="next" variant="contained" color="secondary" size="large" onClick={buttonClick}>Next</Button>
                                 </Link>:
-                                <Button size="large" onClick={buttonClick} variant="contained" fontSize="large" disabled>Next</Button>
+                                <Button size="large" variant="contained" fontSize="large" disabled>Next</Button>
                             }
                         </div>
                     </CardActions>
@@ -104,9 +104,9 @@ function SupportSelector() {
             </Grid>      
             </Grid>
         </div>
-        <div>
+        {/* <div>
             <h2>JSON.stringify {newSupport}</h2>
-        </div>
+        </div> */}
     </div>
   )
   }

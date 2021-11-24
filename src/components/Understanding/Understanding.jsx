@@ -90,11 +90,11 @@ function UnderstandingSelector() {
                      {/* button needs to be wrapped inside of link, otherwise it won't work */}
                         <div className="NextPageButton">
                             <Link to="/">
-                                <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                                <Button size="large" onClick={goBack} variant="outlined" color="secondary" fontSize="large">go back</Button>
                             </Link>
                             {newUnderstanding>0?
                             <Link to="/support">
-                                <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                                <Button className="next" variant="contained" color="secondary" size="large" onClick={buttonClick}>Next</Button>
                             </Link>:
                              <Button size="large" onClick={buttonClick} variant="contained" fontSize="large" disabled>Next</Button>
                             }
@@ -104,9 +104,9 @@ function UnderstandingSelector() {
             </Grid>      
             </Grid>
         </div>
-        <div>
+        {/* <div>
             <h2>JSON.stringify {newUnderstanding}</h2>
-        </div>
+        </div> */}
     </div>
   )
   }

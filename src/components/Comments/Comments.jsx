@@ -77,10 +77,10 @@ function CommentInput() {
                     {/* ^^ centers the button, but not the card itself */}
                         <div className="NextPageButton">
                             <Link to="/support">
-                                <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                                <Button size="large" onClick={goBack} variant="outlined" color="secondary" fontSize="large">go back</Button>
                             </Link>
                             <Link to="/review">
-                                <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                                <Button className="next" variant="contained" color="secondary" size="large" onClick={buttonClick}>Next</Button>
                             </Link>
                         </div>
                     </CardActions>
@@ -88,9 +88,9 @@ function CommentInput() {
             </Grid>      
             </Grid>
         </div>
-        <div>
+        {/* <div>
             <h2>JSON.stringify {newComment}</h2>
-        </div>
+        </div> */}
     </div>
   )
   }

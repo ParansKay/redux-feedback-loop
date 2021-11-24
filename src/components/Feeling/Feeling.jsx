@@ -86,9 +86,10 @@ function FeelingSelector() {
                     <div className="NextPageButton">
                     {newFeeling>0?
                         <Link to="/understanding">
-                            <Button className="next" variant="contained" color="primary" size="large" onClick={buttonClick}>Next</Button>
+                            <Button 
+                            className="next" variant="contained" color="secondary" font-family="oxygen" size="large" onClick={buttonClick}>Next</Button>
                         </Link>:
-                            <Button size="large" onClick={buttonClick} variant="contained" fontSize="large" disabled>Next</Button>
+                            <Button size="large" variant="contained" fontSize="large" disabled>Next</Button>
                     }
                     </div>
                     </CardActions>
@@ -96,9 +97,9 @@ function FeelingSelector() {
             </Grid>      
             </Grid>
         </div>
-        <div>
+        {/* <div>
             <h2>JSON.stringify {newFeeling}</h2>
-        </div>
+        </div> */}
     </div>
   )
   }

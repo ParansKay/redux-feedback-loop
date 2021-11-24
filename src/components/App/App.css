@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #ffc948;
   min-height: 70px;
   padding: 20px;
-  color: white;
+  color: rgb(70, 70, 70);
   margin-bottom: 20px;
+  font-family: oxygen, light, sans-serif;
+}
+
+.title-sub{
+  font-family: noto, regular;
+  color: rgb(102, 102, 102);
 }
 
 .App-title {
@@ -20,4 +29,13 @@
 
 h4 {
   font-style: italic;
+}
+
+.listReview{
+  margin-left: 12em;
+  color: rgb(102, 102, 102);
+}
+
+.reviewItems{
+  font-family: noto;
 }

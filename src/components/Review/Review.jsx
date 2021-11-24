@@ -12,6 +12,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@material-ui/core/Grid';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 //make sure to ask why we pass the props argument in here
 function Review(props) {
@@ -23,6 +24,14 @@ function Review(props) {
       const goBack = ()=>{
         console.log( 'In goBack—going back to previous page!' )
     }
+
+    const theme = createMuiTheme({
+        Typography: {
+          fontFamily: [
+            'oxygen',
+            'noto',
+          ].join(','),
+        },});
 
     // const handleGet=()=>{
     // axios.get('/feedback').then( ( response )=>{
@@ -58,26 +67,30 @@ return(
         {/* the number inside {} indicates how wide the card can be. Weird. */}
             <Card className="card" variant="outlined">
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <createMuiTheme>
+                    <Typography gutterBottom variant="h5" component="div" >
                         <h3>Let's review your feedback!</h3>
                     </Typography>
-                    <Typography align="center" variant="h5">Feelings: {collectResponses.Feeling} </Typography>
+                    <div className="listReview">
+                    <Typography className="reviewItems" align="left" variant="h6">Feelings: {collectResponses.Feeling} </Typography>
                     <br />
-                    <Typography align="center" variant="h5">Understanding: {collectResponses.Understanding} </Typography>
+                    <Typography className="reviewItems" align="left" variant="h6">Understanding: {collectResponses.Understanding} </Typography>
                     <br />
-                    <Typography align="center" variant="h5">Support: {collectResponses.Support} </Typography>
+                    <Typography className="reviewItems" align="left" variant="h6">Support: {collectResponses.Support} </Typography>
                     <br />
-                    <Typography align="center" variant="h5">Comments: {collectResponses.Comments} </Typography>
+                    <Typography className="reviewItems" align="left" variant="h6">Comments: {collectResponses.Comments} </Typography>
                     <br />
+                    </div>
+                    </createMuiTheme>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "right" }}> 
                 {/* ^^ centers the button, but not the card itself */}
                 {/* button needs to be wrapped inside of link, otherwise it won't work */}
                     <Link to="/comments">
-                        <Button size="large" onClick={goBack} variant="contained" color="primary" fontSize="large">go back</Button>
+                        <Button size="large" onClick={goBack} variant="outlined" color="secondary" fontSize="large">go back</Button>
                     </Link>
                     <Link to="/thankyou">
-                        <Button className="submitbtn" variant="contained" color="primary" size="large" onClick={handlePost}>Submit</Button>
+                        <Button className="submitbtn" variant="contained" color="secondary" size="large" onClick={handlePost}>Submit</Button>
                     </Link>
                 </CardActions>
             </Card>
