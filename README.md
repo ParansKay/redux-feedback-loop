@@ -35,13 +35,7 @@ Within the preparation phase, A lot of my time was spent reviewing and familiari
 
 A database.sql is required for this program to run (please see the database file in the repository). 
 
-<<<<<<< HEAD
-### Installation
 
-
-
-=======
->>>>>>> efa44d87a6e91eb441e7fe8f6dae464e83e9f1e4
 ## Usage
 
 This app helps you submit feedback about your feelings, understanding of content, support received, as well as any additional comments! 
@@ -55,12 +49,8 @@ You can easily mark your evaluations using a minimalistic drop-down menu. Once y
 
 ## Acknowledgements
 
-A huge thank you and shoutout to Prime Digital Academy and my instructor Dev Jana, for their encouragement and support! Special thanks to my cohort-mates, Chris Nelson, Rachel Hoey, and Giancarlo Sierra for their help, patience, and guidance. Last but not least, thank you to my home-base support, Dillon, for his encouragement and unwavering support throughout my experience at Prime.  
+A huge thank you and shoutout to Prime Digital Academy and my instructor Dev Jana, for their encouragement and support! Special thanks to my cohort-mates, Chris Nelson, Rachel Hoey, Giancarlo Sierra, and Hannah Fliegel for their help, patience, and guidance. Last but not least, thank you to my home-base support, Dillon, for his encouragement and unwavering support throughout my experience at Prime.  
 
 ## Contacts
 
-<<<<<<< HEAD
 <a href="https://www.linkedin.com/in/paran-kashani"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:parankashani@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>   
-=======
-<a href="https://www.linkedin.com/in/paran-kashani"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:parankashani@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>
->>>>>>> efa44d87a6e91eb441e7fe8f6dae464e83e9f1e4
