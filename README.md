@@ -21,6 +21,8 @@ This is a minimalistic feedback app that gathers responses to evaluations of you
 
 ## Screenshots
 ![screenshot of to do list](Screen Recording 2021-11-23 at 8.23.36 PM.mov)"
+=======
+
 ## Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a><a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" height="40px" width="40px" /></a><a href="https://reactjs.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" height="40px" width="40px" /></a><a href="https://redux.js.org/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" height="40px" width="40px" /></a>
@@ -33,10 +35,13 @@ Within the preparation phase, A lot of my time was spent reviewing and familiari
 
 A database.sql is required for this program to run (please see the database file in the repository). 
 
+<<<<<<< HEAD
 ### Installation
 
 
 
+=======
+>>>>>>> efa44d87a6e91eb441e7fe8f6dae464e83e9f1e4
 ## Usage
 
 This app helps you submit feedback about your feelings, understanding of content, support received, as well as any additional comments! 
@@ -54,4 +59,8 @@ A huge thank you and shoutout to Prime Digital Academy and my instructor Dev Jan
 
 ## Contacts
 
+<<<<<<< HEAD
 <a href="https://www.linkedin.com/in/paran-kashani"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:parankashani@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>   
+=======
+<a href="https://www.linkedin.com/in/paran-kashani"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:parankashani@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>
+>>>>>>> efa44d87a6e91eb441e7fe8f6dae464e83e9f1e4
