@@ -20,7 +20,7 @@
 This is a minimalistic feedback app that gathers responses to evaluations of your feelings, understanding of content, support received, as well as additional comments and submits them to a database! 
 
 ## Screenshots
-![screenshot of to do list](Screen Recording 2021-11-23 at 8.23.36 PM.mov)"
+![screenshot of to do list](feedbackloop.gif)"
 =======
 
 ## Built With
